@@ -26,23 +26,23 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     func sceneDidDisconnect(_ scene: UIScene) {
-        print("test")
+        Logger.log(tag: .lifecycle)
     }
     
     func sceneDidBecomeActive(_ scene: UIScene) {
-        print("test")
+        Logger.log(tag: .lifecycle)
     }
     
     func sceneWillResignActive(_ scene: UIScene) {
-        print("test")
+        Logger.log(tag: .lifecycle)
     }
     
     func sceneWillEnterForeground(_ scene: UIScene) {
-        print("test")
+        Logger.log(tag: .lifecycle)
     }
     
     func sceneDidEnterBackground(_ scene: UIScene) {
-        print("test")
+        Logger.log(tag: .lifecycle)
     }
     
 }
