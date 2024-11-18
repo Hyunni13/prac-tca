@@ -7,7 +7,11 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+final class HomeViewController: UIViewController {
+    
+    private lazy var viewModel: HomeViewModel = {
+        return HomeViewModel()
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,6 +21,10 @@ class HomeViewController: UIViewController {
     
     private func initUI() {
         view.backgroundColor = .blue
+    }
+    
+    private func getViewModel() -> HomeViewModel {
+        return viewModel
     }
     
 }
