@@ -5,12 +5,17 @@
 //  Created by James on 11/18/24.
 //
 
+import Foundation
+
 final class Logger {
     
     enum Tag: String {
         case lifecycle = "🔄"
         case defaults = "📌"
     }
+    
+    
+    private static let serialQueue = DispatchQueue(label: "LOGGER_QUEUE")
     
     /**
      커스텀 로깅
@@ -20,12 +25,15 @@ final class Logger {
         tag: Tag = .defaults,
         fileID: String = #fileID,
         function: String = #function,
-        line: Int = #line
+        line: Int = #line,
+        timestamp: String = Date().toString(format: "HH:mm:ss.SSS")
     ) {
-        print("""
-        \(tag.rawValue) \(cleanRawFileID(fileID)) > \(function) > \(line)
-            ⎿ \(cleanRawMessage(message))
-        """)
+        serialQueue.async {
+            print("""
+            \(tag.rawValue) (\(timestamp)) \(cleanRawFileID(fileID)) > \(function) > \(line)
+                ⎿ \(cleanRawMessage(message))
+            """)
+        }
     }
     
     private static func cleanRawFileID(_ rawFileID: String) -> String {
@@ -34,7 +42,7 @@ final class Logger {
     }
     
     private static func cleanRawMessage(_ rawMessage: Any?) -> Any {
-        guard let message = rawMessage else { return "nil" }
+        guard let message = rawMessage else { return "No message provided" }
         return message
     }
     

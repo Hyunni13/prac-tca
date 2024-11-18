@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		083ECCD02CEB266E00A30791 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083ECCCF2CEB266E00A30791 /* Logger.swift */; };
+		083ECCD42CEB3DAC00A30791 /* Date+Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083ECCD32CEB3DAC00A30791 /* Date+Tools.swift */; };
 		086503842CEB1EBE0017F5EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0865037A2CEB1EBE0017F5EF /* AppDelegate.swift */; };
 		086503852CEB1EBE0017F5EF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086503812CEB1EBE0017F5EF /* SceneDelegate.swift */; };
 		086503862CEB1EBE0017F5EF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086503822CEB1EBE0017F5EF /* HomeViewController.swift */; };
@@ -37,6 +38,7 @@
 
 /* Begin PBXFileReference section */
 		083ECCCF2CEB266E00A30791 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		083ECCD32CEB3DAC00A30791 /* Date+Tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Tools.swift"; sourceTree = "<group>"; };
 		086503462CEB1EB40017F5EF /* PracTCA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PracTCA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0865035C2CEB1EB50017F5EF /* PracTCATests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PracTCATests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		086503662CEB1EB50017F5EF /* PracTCAUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PracTCAUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,6 +78,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		083ECCD12CEB3D9100A30791 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				083ECCD22CEB3D9B00A30791 /* Extensions */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		083ECCD22CEB3D9B00A30791 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				083ECCD32CEB3DAC00A30791 /* Date+Tools.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		0865033D2CEB1EB40017F5EF = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +119,7 @@
 			children = (
 				086503932CEB1EDB0017F5EF /* App */,
 				086503952CEB232F0017F5EF /* Features */,
+				083ECCD12CEB3D9100A30791 /* Common */,
 				086503982CEB25FC0017F5EF /* Utils */,
 				086503942CEB1EED0017F5EF /* Resources */,
 				0865037C2CEB1EBE0017F5EF /* Info.plist */,
@@ -315,6 +334,7 @@
 				086503842CEB1EBE0017F5EF /* AppDelegate.swift in Sources */,
 				086503852CEB1EBE0017F5EF /* SceneDelegate.swift in Sources */,
 				086503862CEB1EBE0017F5EF /* HomeViewController.swift in Sources */,
+				083ECCD42CEB3DAC00A30791 /* Date+Tools.swift in Sources */,
 				083ECCD02CEB266E00A30791 /* Logger.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
