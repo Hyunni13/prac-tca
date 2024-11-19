@@ -6,5 +6,10 @@
 //
 
 struct HomeEnvironment {
-    
+    var userService: UserService = UserService()
+}
+
+
+struct UserService {
+    var fetchUsers: () -> Void = NetworkManager.shared.fetchUsers
 }

@@ -9,9 +9,10 @@ import UIKit
 
 final class HomeViewController: UIViewController {
     
-    private lazy var viewModel: HomeViewModel = {
-        return HomeViewModel()
-    }()
+//    private lazy var viewModel: HomeViewModel = {
+//        return HomeViewModel()
+//    }()
+    private var viewModel: HomeViewModel = HomeViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()

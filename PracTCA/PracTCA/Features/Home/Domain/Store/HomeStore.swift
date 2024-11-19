@@ -8,7 +8,7 @@
 import Combine
 import Foundation
 
-class HomeStore: ObservableObject {
+final class HomeStore: ObservableObject {
     
     @Published private(set) var state: HomeState
     
@@ -20,6 +20,7 @@ class HomeStore: ObservableObject {
     }
     
     func send(_ action: HomeAction) {
+        reduce(state: &state, action: action, environment: environment)
 //        if let effect = reduce(state: &state, action: action, environment: environment) {
 //            effect
 //                .receive(on: DispatchQueue.main)
@@ -36,7 +37,7 @@ class HomeStore: ObservableObject {
     ) {
         switch action {
         case .loadUsers:
-            return
+            environment.userService.fetchUsers()
         case .usersLoaded:
             return
         }

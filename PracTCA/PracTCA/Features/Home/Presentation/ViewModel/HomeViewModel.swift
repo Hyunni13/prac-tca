@@ -9,8 +9,12 @@ import Foundation
 
 final class HomeViewModel: ObservableObject {
     
+    @Published var store = HomeStore(initialState: HomeState())
+    
     init() {
         Logger.log(tag: .lifecycle)
+        
+        store.send(.loadUsers)
     }
     
 }
