@@ -43,8 +43,9 @@ final class HomeStore: ObservableObject {
             switch result {
             case .success(let response):
                 state.users = response.data
-                Logger.log(response, tag: .error)
+                Logger.log(response, tag: .defaults)
             case .failure(let error):
+                state.users = [User(id: 1, name: "sanghyun", email: "dev.sanghyun")]
                 Logger.log(error, tag: .error)
             }
             

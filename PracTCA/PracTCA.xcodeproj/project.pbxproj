@@ -18,6 +18,7 @@
 		083ECCEB2CEC124600A30791 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083ECCEA2CEC124600A30791 /* NetworkManager.swift */; };
 		083ECCEE2CEC12B900A30791 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 083ECCED2CEC12B900A30791 /* Alamofire */; };
 		083ECCF02CEC1C1400A30791 /* UserDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083ECCEF2CEC1C1400A30791 /* UserDTO.swift */; };
+		083ECCF22CEC228600A30791 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083ECCF12CEC228600A30791 /* HomeView.swift */; };
 		086503842CEB1EBE0017F5EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0865037A2CEB1EBE0017F5EF /* AppDelegate.swift */; };
 		086503852CEB1EBE0017F5EF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086503812CEB1EBE0017F5EF /* SceneDelegate.swift */; };
 		086503862CEB1EBE0017F5EF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086503822CEB1EBE0017F5EF /* HomeViewController.swift */; };
@@ -56,6 +57,7 @@
 		083ECCE62CEC0BD200A30791 /* HomeStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeStore.swift; sourceTree = "<group>"; };
 		083ECCEA2CEC124600A30791 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		083ECCEF2CEC1C1400A30791 /* UserDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDTO.swift; sourceTree = "<group>"; };
+		083ECCF12CEC228600A30791 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		086503462CEB1EB40017F5EF /* PracTCA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PracTCA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0865035C2CEB1EB50017F5EF /* PracTCATests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PracTCATests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		086503662CEB1EB50017F5EF /* PracTCAUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PracTCAUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -144,6 +146,7 @@
 			children = (
 				083ECCD52CEBFF1000A30791 /* ViewModel */,
 				086503822CEB1EBE0017F5EF /* HomeViewController.swift */,
+				083ECCF12CEC228600A30791 /* HomeView.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -418,6 +421,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				083ECCEB2CEC124600A30791 /* NetworkManager.swift in Sources */,
+				083ECCF22CEC228600A30791 /* HomeView.swift in Sources */,
 				086503842CEB1EBE0017F5EF /* AppDelegate.swift in Sources */,
 				083ECCDF2CEC019D00A30791 /* HomeViewModel.swift in Sources */,
 				083ECCDA2CEBFF7E00A30791 /* User.swift in Sources */,
@@ -489,7 +493,6 @@
 				INFOPLIST_FILE = PracTCA/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -522,7 +525,6 @@
 				INFOPLIST_FILE = PracTCA/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
