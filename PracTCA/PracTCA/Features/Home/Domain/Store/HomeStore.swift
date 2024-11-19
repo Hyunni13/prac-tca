@@ -20,26 +20,35 @@ final class HomeStore: ObservableObject {
     }
     
     func send(_ action: HomeAction) {
-        reduce(state: &state, action: action, environment: environment)
-//        if let effect = reduce(state: &state, action: action, environment: environment) {
-//            effect
-//                .receive(on: DispatchQueue.main)
-//                .sink(receiveValue: send)
-//                .store(in: &cancellables)
-//        }
+        if let effect = reduce(state: &state, action: action, environment: environment) {
+            effect
+                .receive(on: DispatchQueue.main)
+                .sink(receiveValue: send)
+                .store(in: &cancellables)
+        }
     }
     
     private func reduce(
         state: inout HomeState,
         action: HomeAction,
         environment: HomeEnvironment
-//    ) -> AnyPublisher<HomeAction, Never>? {
-    ) {
+    ) -> AnyPublisher<HomeAction, Never>? {
         switch action {
         case .loadUsers:
-            environment.userService.fetchUsers()
-        case .usersLoaded:
-            return
+            return environment.userService.fetchUsers()
+                .map { .usersLoaded(.success($0)) }
+                .catch { Just(.usersLoaded(.failure($0))) }
+                .eraseToAnyPublisher()
+        case .usersLoaded(let result):
+            switch result {
+            case .success(let response):
+                state.users = response.data
+                Logger.log(response, tag: .error)
+            case .failure(let error):
+                Logger.log(error, tag: .error)
+            }
+            
+            return nil
         }
     }
     

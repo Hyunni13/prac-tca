@@ -10,8 +10,9 @@ import Foundation
 final class Logger {
     
     enum Tag: String {
-        case lifecycle = "🔄"
         case defaults = "📌"
+        case lifecycle = "🔄"
+        case error = "💥"
     }
     
     
