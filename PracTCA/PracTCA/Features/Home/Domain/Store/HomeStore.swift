@@ -39,7 +39,7 @@ final class HomeStore: ObservableObject {
             switch result {
             case .success(let response):
                 state.users = response.data
-            case .failure(let _):
+            case .failure:
                 state.users = [User(id: -1, name: "nil", email: "nil")]
             }
             

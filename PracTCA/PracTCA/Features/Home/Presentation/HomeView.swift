@@ -11,9 +11,19 @@ struct HomeView: View {
     @ObservedObject var viewModel: HomeViewModel
     
     var body: some View {
-        VStack(spacing: 0) {
-            Text(viewModel.users.debugDescription)
+        ScrollView(.vertical, showsIndicators: true) {
+            VStack(spacing: 20) {
+                ForEach(viewModel.store.state.users) { user in
+                    HStack(alignment: .firstTextBaseline, spacing: 10) {
+                        Text(user.id.description)
+                        Text(user.name)
+                        Text(user.email)
+                        Spacer()
+                    }
+                }
+            }
         }
+        .padding()
     }
 }
 
