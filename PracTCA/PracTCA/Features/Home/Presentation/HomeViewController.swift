@@ -10,9 +10,7 @@ import UIKit
 
 final class HomeViewController: UIViewController {
     
-    private lazy var viewModel: HomeViewModel = {
-        return HomeViewModel()
-    }()
+    private let viewModel: HomeViewModel = HomeViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,11 +18,14 @@ final class HomeViewController: UIViewController {
         initUI()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        viewModel.fetchUsers()
+    }
+    
     private func initUI() {
         view.backgroundColor = .blue
         
-        let hostViewController = UIHostingController(
-            rootView: HomeView(viewModel: getViewModel()))
+        let hostViewController = UIHostingController(rootView: HomeView(viewModel: viewModel))
         hostViewController.view.translatesAutoresizingMaskIntoConstraints = false
         
         addChild(hostViewController)
@@ -37,10 +38,6 @@ final class HomeViewController: UIViewController {
             hostViewController.view.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             hostViewController.view.trailingAnchor.constraint(equalTo: view.trailingAnchor),
         ])
-    }
-    
-    private func getViewModel() -> HomeViewModel {
-        return viewModel
     }
     
 }

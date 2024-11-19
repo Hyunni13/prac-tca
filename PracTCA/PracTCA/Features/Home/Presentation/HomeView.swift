@@ -13,13 +13,6 @@ struct HomeView: View {
     var body: some View {
         VStack(spacing: 0) {
             Text(viewModel.users.debugDescription)
-            
-            Spacer()
-                .frame(height: 200)
-            
-            Button("Fetch Users") {
-                viewModel.fetchUser()
-            }
         }
     }
 }
