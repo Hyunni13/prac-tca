@@ -7,5 +7,5 @@
 
 enum HomeAction {
     case loadUsers
-    case usersLoaded(Result<UserDTO, Error>)
+    case usersLoaded(Result<UserDTO, any Error>)
 }
