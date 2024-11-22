@@ -14,11 +14,15 @@ final class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        Logger.log(tag: .lifecycle)
         
         initUI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        Logger.log(tag: .lifecycle)
+        
         viewModel.fetchUsers()
     }
     

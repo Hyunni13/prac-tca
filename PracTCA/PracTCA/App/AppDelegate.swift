@@ -15,7 +15,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
         Logger.log(tag: .lifecycle)
-        
         return true
     }
     

@@ -248,18 +248,18 @@
 		086503952CEB232F0017F5EF /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				086503962CEB234C0017F5EF /* LaunchScreen */,
+				086503962CEB234C0017F5EF /* Launch */,
 				086503972CEB235A0017F5EF /* Home */,
 			);
 			path = Features;
 			sourceTree = "<group>";
 		};
-		086503962CEB234C0017F5EF /* LaunchScreen */ = {
+		086503962CEB234C0017F5EF /* Launch */ = {
 			isa = PBXGroup;
 			children = (
 				0865037E2CEB1EBE0017F5EF /* LaunchScreen.storyboard */,
 			);
-			path = LaunchScreen;
+			path = Launch;
 			sourceTree = "<group>";
 		};
 		086503972CEB235A0017F5EF /* Home */ = {
