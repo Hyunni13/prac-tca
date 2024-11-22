@@ -10,25 +10,19 @@ import Foundation
 
 final class HomeViewModel: ObservableObject {
     
-    @Published private(set) var users: [User] = []
-    
-    private let store = HomeStore()
+    @Published private(set) var store = HomeStore()
     private var cancellables: Set<AnyCancellable> = []
     
     init() {
-        bind()
+        store.$state.sink { [weak self] _ in
+            guard let self = self else { return }
+            self.objectWillChange.send()
+        }
+        .store(in: &cancellables)
     }
     
     func fetchUsers() {
         store.send(.loadUsers)
-    }
-    
-    private func bind() {
-        store.$state.sink { [weak self] newState in
-            guard let self = self else { return }
-            self.users = newState.users
-        }
-        .store(in: &cancellables)
     }
     
 }

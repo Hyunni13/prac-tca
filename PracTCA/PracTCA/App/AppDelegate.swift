@@ -14,6 +14,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
+        Logger.log(tag: .lifecycle)
+        
         return true
     }
     
@@ -22,6 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         configurationForConnecting connectingSceneSession: UISceneSession,
         options: UIScene.ConnectionOptions
     ) -> UISceneConfiguration {
+        Logger.log(tag: .lifecycle)
+        
         return UISceneConfiguration(
             name: "Default Configuration",
             sessionRole: connectingSceneSession.role)

@@ -15,25 +15,24 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         _ scene: UIScene, willConnectTo session: UISceneSession,
         options connectionOptions: UIScene.ConnectionOptions
     ) {
+        Logger.log(tag: .lifecycle)
+        
         guard let scene = (scene as? UIWindowScene) else { return }
-
+        
         let window = UIWindow(windowScene: scene)
-        window.rootViewController = UINavigationController(rootViewController: HomeViewController())
+        window.rootViewController = UINavigationController(
+            rootViewController: HomeViewController())
         window.backgroundColor = .blue
         window.makeKeyAndVisible()
         
         self.window = window
     }
     
-    func sceneDidDisconnect(_ scene: UIScene) {
-        Logger.log(tag: .lifecycle)
-    }
-    
-    func sceneDidBecomeActive(_ scene: UIScene) {
-        Logger.log(tag: .lifecycle)
-    }
-    
     func sceneWillResignActive(_ scene: UIScene) {
+        Logger.log(tag: .lifecycle)
+    }
+    
+    func sceneDidEnterBackground(_ scene: UIScene) {
         Logger.log(tag: .lifecycle)
     }
     
@@ -41,7 +40,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         Logger.log(tag: .lifecycle)
     }
     
-    func sceneDidEnterBackground(_ scene: UIScene) {
+    func sceneDidBecomeActive(_ scene: UIScene) {
+        Logger.log(tag: .lifecycle)
+    }
+    
+    func sceneDidDisconnect(_ scene: UIScene) {
         Logger.log(tag: .lifecycle)
     }
     
