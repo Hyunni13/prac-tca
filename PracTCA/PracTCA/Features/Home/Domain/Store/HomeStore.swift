@@ -31,16 +31,16 @@ final class HomeStore: ObservableObject {
     ) -> AnyPublisher<HomeAction, Never>? {
         switch action {
         case .loadUsers:
-            return environment.fetchUsers()
+            return environment.userServices.fetchUsers()
                 .map { .usersLoaded(.success($0)) }
                 .catch { Just(.usersLoaded(.failure($0))) }
                 .eraseToAnyPublisher()
         case .usersLoaded(let result):
             switch result {
             case .success(let response):
-                state.users = response.data
+                state.users = response
             case .failure:
-                state.users = [User(id: -1, name: "nil", email: "nil")]
+                state.users = [User(id: -1, name: "nil")]
             }
             
             return nil

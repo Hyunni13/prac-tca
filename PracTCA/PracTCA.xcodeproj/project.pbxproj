@@ -15,7 +15,7 @@
 		083ECCDF2CEC019D00A30791 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083ECCDE2CEC019D00A30791 /* HomeViewModel.swift */; };
 		083ECCE42CEC0B7A00A30791 /* HomeEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083ECCE32CEC0B7A00A30791 /* HomeEnvironment.swift */; };
 		083ECCE72CEC0BD200A30791 /* HomeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083ECCE62CEC0BD200A30791 /* HomeStore.swift */; };
-		083ECCEB2CEC124600A30791 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083ECCEA2CEC124600A30791 /* NetworkManager.swift */; };
+		083ECCEB2CEC124600A30791 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083ECCEA2CEC124600A30791 /* NetworkClient.swift */; };
 		083ECCEE2CEC12B900A30791 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 083ECCED2CEC12B900A30791 /* Alamofire */; };
 		083ECCF02CEC1C1400A30791 /* UserDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083ECCEF2CEC1C1400A30791 /* UserDTO.swift */; };
 		083ECCF22CEC228600A30791 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083ECCF12CEC228600A30791 /* HomeView.swift */; };
@@ -27,6 +27,8 @@
 		0865038D2CEB1EC10017F5EF /* PracTCATests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0865038B2CEB1EC10017F5EF /* PracTCATests.swift */; };
 		086503912CEB1EC30017F5EF /* PracTCAUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0865038E2CEB1EC30017F5EF /* PracTCAUITests.swift */; };
 		086503922CEB1EC30017F5EF /* PracTCAUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0865038F2CEB1EC30017F5EF /* PracTCAUITestsLaunchTests.swift */; };
+		089D9E0D2CF06F140024AE98 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089D9E0C2CF06F140024AE98 /* Endpoints.swift */; };
+		089D9E102CF072AB0024AE98 /* UserServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089D9E0F2CF072AB0024AE98 /* UserServices.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,7 +57,7 @@
 		083ECCDE2CEC019D00A30791 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		083ECCE32CEC0B7A00A30791 /* HomeEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeEnvironment.swift; sourceTree = "<group>"; };
 		083ECCE62CEC0BD200A30791 /* HomeStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeStore.swift; sourceTree = "<group>"; };
-		083ECCEA2CEC124600A30791 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		083ECCEA2CEC124600A30791 /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		083ECCEF2CEC1C1400A30791 /* UserDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDTO.swift; sourceTree = "<group>"; };
 		083ECCF12CEC228600A30791 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		086503462CEB1EB40017F5EF /* PracTCA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PracTCA.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,6 +72,8 @@
 		0865038B2CEB1EC10017F5EF /* PracTCATests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracTCATests.swift; sourceTree = "<group>"; };
 		0865038E2CEB1EC30017F5EF /* PracTCAUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracTCAUITests.swift; sourceTree = "<group>"; };
 		0865038F2CEB1EC30017F5EF /* PracTCAUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracTCAUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		089D9E0C2CF06F140024AE98 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
+		089D9E0F2CF072AB0024AE98 /* UserServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserServices.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +105,7 @@
 		083ECCD12CEB3D9100A30791 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				089D9E0E2CF0729C0024AE98 /* Services */,
 				083ECCE92CEC11DE00A30791 /* Network */,
 				083ECCD22CEB3D9B00A30791 /* Extensions */,
 			);
@@ -173,7 +178,8 @@
 		083ECCE92CEC11DE00A30791 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				083ECCEA2CEC124600A30791 /* NetworkManager.swift */,
+				083ECCEA2CEC124600A30791 /* NetworkClient.swift */,
+				089D9E0C2CF06F140024AE98 /* Endpoints.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -277,6 +283,14 @@
 				083ECCCF2CEB266E00A30791 /* Logger.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		089D9E0E2CF0729C0024AE98 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				089D9E0F2CF072AB0024AE98 /* UserServices.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -420,10 +434,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				083ECCEB2CEC124600A30791 /* NetworkManager.swift in Sources */,
+				089D9E102CF072AB0024AE98 /* UserServices.swift in Sources */,
+				083ECCEB2CEC124600A30791 /* NetworkClient.swift in Sources */,
 				083ECCF22CEC228600A30791 /* HomeView.swift in Sources */,
 				086503842CEB1EBE0017F5EF /* AppDelegate.swift in Sources */,
 				083ECCDF2CEC019D00A30791 /* HomeViewModel.swift in Sources */,
+				089D9E0D2CF06F140024AE98 /* Endpoints.swift in Sources */,
 				083ECCDA2CEBFF7E00A30791 /* User.swift in Sources */,
 				083ECCDD2CEC00B600A30791 /* HomeAction.swift in Sources */,
 				083ECCF02CEC1C1400A30791 /* UserDTO.swift in Sources */,

@@ -8,5 +8,5 @@
 import Combine
 
 struct HomeEnvironment {
-    var fetchUsers: () -> AnyPublisher<UserDTO, any Error> = NetworkManager.shared.fetchUsers
+    var userServices: UserServices = UserServices()
 }
